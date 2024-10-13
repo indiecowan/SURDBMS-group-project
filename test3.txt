@@ -1,0 +1,59 @@
+# surly command file with all lowercase input
+
+#relation
+#definitions
+relation course (cnum char 8, title char 30, credits num 4);
+relation prereq (cnum char 8,
+                pnum char 8);
+relation offering   (cnum       char    8,
+                    section     num     5,
+                    starthour   char    5,
+                    endhour     char    5,
+                    days        char    5,
+                    room        char    10,
+                    instructor  char    20);
+
+relation staff (name char 20, spouse char 10, rank char 5, campusaddr char 10, extension char 9);
+relation interests (name char 20,
+                    interest char 30);
+relation dept (name char 20, dept char 4);
+
+#inserting tuples
+insert course csci141 'computer programming i' 4;
+insert course csci145 'comp prog & linear data structures' 4;
+insert course csci241 'data structures' 4;
+insert course csci301 'formal languages' 5;
+insert course csci305 algorithms 4;
+insert course csci330 'database systems' 4;
+insert course csci345 'object oriented design' 4;
+
+insert prereq csci141 math112;
+insert prereq csci145 math115;
+insert prereq csci145 csci141;
+insert prereq csci241 math124;
+insert prereq csci241 csci145;
+insert prereq csci301 csci145;
+insert prereq csci305 csci301;
+insert prereq csci305 csci241;
+insert prereq csci330 csci241;
+insert prereq csci345 csci241;
+
+insert offering csci141 27921 13:00 13:50 mwf cf115 jagodzinski;
+insert offering csci241 27922 9:00 9:50 mwf aw205 islam;
+insert offering csci241 27935 11:00 11:50 mwf aw403 bover;
+insert offering csci305 27950 14:00 14:50 mtwf aw403 liu;
+insert offering csci330 27974 12:00 12:50 mtwf cf314 deneke;
+insert offering csci330 27977 14:00 14:50 mtwf cf316 deneke;
+
+insert staff gregory don sec a8c 0030;
+insert staff deneke who assis 'cf 479' 3769;
+
+insert interests deneke ai;
+insert interests deneke 'virtual worlds';
+
+insert dept deneke csci;
+insert dept islam csci;
+insert dept gregory math;
+
+#printing tuples
+print course, offering, prereq;

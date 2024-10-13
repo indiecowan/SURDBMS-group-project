@@ -1,0 +1,55 @@
+# test 7 tests to see if SELECT WHERE works
+
+# Relationing tables
+RELATION COURSE (CNUM CHAR 8, TITLE CHAR 30, CREDITS NUM 4);
+
+# Inserting tuples
+INSERT COURSE CSCI141 'COMPUTER PROGRAMMING I' 4;
+INSERT COURSE CSCI145 'COMP PROG & LINEAR DATA STRUCTURES' 4;
+INSERT COURSE CSCI241 'DATA STRUCTURES' 4;
+INSERT COURSE CSCI301 'FORMAL LANGUAGES' 5;
+INSERT COURSE CSCI305 ALGORITHMS 4;
+INSERT COURSE CSCI330 'DATABASE SYSTEMS' 4;
+INSERT COURSE CSCI345 'OBJECT ORIENTED DESIGN' 4;
+
+# Printing table
+PRINT COURSE;
+
+# Handle zero, single, and multiple conditions  ------------------------------
+# Selecting single relation and put it in a variable
+C = SELECT COURSE;
+# Printing table
+PRINT C;
+
+# Selecting Where only 1 condition
+T1 = SELECT COURSE WHERE CNUM = CSCI241;
+# Printing table
+PRINT T1;
+
+# Selecting Where 2 conditions
+T2 = SELECT COURSE WHERE CNUM = CSCI241 and CREDITS = 4;
+# Printing table
+PRINT T2;
+
+
+# Has proper order of operation  ---------------------------------------------
+# Supports single quotes, =, !=, <, >, <=, >=  -------------------------------
+# Testing multiple
+DB_S = SELECT COURSE WHERE TITLE = 'DATABASE SYSTEMS' or CNUM != CSCI301 and CREDITS > 3;
+PRINT DB_S;
+
+# Checks that attribute / relation being selected exists ---------------------
+N = SELECT CRRRRR WHERE TITLE = 'DATABASE SYSTEMS';
+N2 = SELECT COURSE WHERE TTTTT = 'DATABASE SYSTEMS';
+
+
+
+# Creates an empty relation when there is no result --------------------------
+E = SELECT COURSE WHERE TITLE = 'FAKE CLASS';
+PRINT E;
+
+# Can SELECT from TEMP relations ---------------------------------------------
+TEST = SELECT COURSE;
+TEST2 = SELECT TEST;
+# Printing table
+PRINT TEST2;

@@ -1,0 +1,39 @@
+# test 5 checks to see if PROJECT works :3
+
+# Relationing tables
+RELATION COURSE (CNUM CHAR 8, TITLE CHAR 30, CREDITS NUM 4);
+
+# Inserting tuples
+INSERT COURSE CSCI141 'COMPUTER PROGRAMMING I' 4;
+INSERT COURSE CSCI145 'COMP PROG & LINEAR DATA STRUCTURES' 4;
+INSERT COURSE CSCI241 'DATA STRUCTURES' 4;
+INSERT COURSE CSCI301 'FORMAL LANGUAGES' 5;
+INSERT COURSE CSCI305 ALGORITHMS 4;
+INSERT COURSE CSCI330 'DATABASE SYSTEMS' 4;
+INSERT COURSE CSCI345 'OBJECT ORIENTED DESIGN' 4;
+
+# Printing table
+PRINT COURSE;
+
+
+# Handles correct format with single and multiple attributes -----------------
+# Projecting one attribute
+O = PROJECT CREDITS FROM COURSE;
+PRINT O;
+
+# Projecting multiple attributes
+P = PROJECT CREDITS, CNUM FROM COURSE;
+# Printing temp tables
+PRINT P;
+
+
+# Only returns DISTINCT tuples -----------------------------------------------
+
+
+# Checks that attribute / relation being projected exists --------------------
+T1 = PROJECT CRRRRRR, CNUM FROM COURSE;
+T2 = PROJECT CREDITS, CNUM FROM CWWWWW;
+
+# Can PROJECT from TEMP relations --------------------------------------------
+P2 = PROJECT CREDITS FROM P;
+PRINT P2;

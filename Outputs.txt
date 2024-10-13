@@ -1,0 +1,491 @@
+test5Project.txt output -----------------------------------------------------------------------------------------------------------------------------
+PS C:\Users\norrn\Documents\schoolwork\SURLY1\surly-csci330-surly-group9> java Main.java test5Project.txt
+RELATION:
+INSERT:
+INSERT:
+INSERT:
+INSERT:
+INSERT:
+INSERT:
+INSERT:
+PRINT:
+*******************************************************
+| COURSE                                              |
+-------------------------------------------------------
+| CNUM     | TITLE                          | CREDITS |
+-------------------------------------------------------
+| CSCI141  | COMPUTER PROGRAMMING I         | 4       |
+| CSCI145  | COMP PROG & LINEAR DATA STRUCT | 4       |
+| CSCI241  | DATA STRUCTURES                | 4       |
+| CSCI301  | FORMAL LANGUAGES               | 5       |
+| CSCI305  | ALGORITHMS                     | 4       |
+| CSCI330  | DATABASE SYSTEMS               | 4       |
+| CSCI345  | OBJECT ORIENTED DESIGN         | 4       |
+*******************************************************
+
+PROJECT:
+PRINT:
+******************
+| O              |
+------------------
+| COURSE.CREDITS |
+------------------
+| 4              |
+| 4              |
+| 4              |
+| 5              |
+| 4              |
+| 4              |
+| 4              |
+******************
+
+PROJECT:
+PRINT:
+********************************
+| P                            |
+--------------------------------
+| COURSE.CREDITS | COURSE.CNUM |
+--------------------------------
+| 4              | CSCI141     |
+| 4              | CSCI145     |
+| 4              | CSCI241     |
+| 5              | CSCI301     |
+| 4              | CSCI305     |
+| 4              | CSCI330     |
+| 4              | CSCI345     |
+********************************
+
+PROJECT:
+java.lang.Exception: ERROR: Trying to project on an attribute (CRRRRRR) that is not in the provided table. Project will not be performed.
+PROJECT:
+ERROR: Trying to project from a table that does not exist (CWWWWW). Project cannot be performed.
+PROJECT:
+PRINT:
+******************
+| P2             |
+------------------
+| COURSE.CREDITS |
+------------------
+| 4              |
+| 4              |
+| 4              |
+| 5              |
+| 4              |
+| 4              |
+| 4              |
+******************
+
+PS C:\Users\norrn\Documents\schoolwork\SURLY1\surly-csci330-surly-group9>
+test6DeleteWhere.txt output -------------------------------------------------------------------------------------------------------------------------
+PS C:\Users\norrn\Documents\schoolwork\SURLY1\surly-csci330-surly-group9> java Main.java test6DeleteWhere.txt
+RELATION:
+INSERT:
+INSERT:
+INSERT:
+INSERT:
+INSERT:
+INSERT:
+INSERT:
+RELATION:
+INSERT:
+INSERT:
+INSERT:
+INSERT:
+INSERT:
+INSERT:
+RELATION:
+INSERT:
+INSERT:
+INSERT:
+INSERT:
+INSERT:
+INSERT:
+INSERT:
+INSERT:
+INSERT:
+INSERT:
+PRINT:
+*******************************************************
+| COURSE                                              |
+-------------------------------------------------------
+| CNUM     | TITLE                          | CREDITS |
+-------------------------------------------------------
+| CSCI141  | COMPUTER PROGRAMMING I         | 4       |
+| CSCI145  | COMP PROG & LINEAR DATA STRUCT | 4       |
+| CSCI241  | DATA STRUCTURES                | 4       |
+| CSCI301  | FORMAL LANGUAGES               | 5       |
+| CSCI305  | ALGORITHMS                     | 4       |
+| CSCI330  | DATABASE SYSTEMS               | 4       |
+| CSCI345  | OBJECT ORIENTED DESIGN         | 4       |
+*******************************************************
+
+PRINT:
+***********************
+| PREREQ              |
+-----------------------
+| CNUM     | PNUM     |
+-----------------------
+| CSCI141  | MATH112  |
+| CSCI145  | MATH115  |
+| CSCI145  | CSCI141  |
+| CSCI241  | MATH124  |
+| CSCI241  | CSCI145  |
+| CSCI301  | CSCI145  |
+| CSCI305  | CSCI301  |
+| CSCI305  | CSCI241  |
+| CSCI330  | CSCI241  |
+| CSCI345  | CSCI241  |
+***********************
+
+PRINT:
+****************************************************************************************
+| OFFERING                                                                             |
+----------------------------------------------------------------------------------------
+| CNUM     | SECTION | STARTHOUR | ENDHOUR | DAYS  | ROOM       | INSTRUCTOR           |
+----------------------------------------------------------------------------------------
+| CSCI141  | 27921   | 13:00     | 13:50   | MWF   | CF115      | JAGODZINSKI          |
+| CSCI241  | 27922   | 9:00      | 9:50    | MWF   | AW205      | ISLAM                |
+| CSCI241  | 27935   | 11:00     | 11:50   | MWF   | AW403      | BOVER                |
+| CSCI305  | 27950   | 14:00     | 14:50   | MTWF  | AW403      | LIU                  |
+| CSCI330  | 27974   | 12:00     | 12:50   | MTWF  | CF314      | DENEKE               |
+| CSCI330  | 27977   | 14:00     | 14:50   | MTWF  | CF316      | DENEKE               |
+****************************************************************************************
+
+Error: input line not recognized: DELETE COURSE WHERE CNUM = CSCI241;
+PRINT:
+*******************************************************
+| COURSE                                              |
+-------------------------------------------------------
+| CNUM     | TITLE                          | CREDITS |
+-------------------------------------------------------
+| CSCI141  | COMPUTER PROGRAMMING I         | 4       |
+| CSCI145  | COMP PROG & LINEAR DATA STRUCT | 4       |
+| CSCI241  | DATA STRUCTURES                | 4       |
+| CSCI301  | FORMAL LANGUAGES               | 5       |
+| CSCI305  | ALGORITHMS                     | 4       |
+| CSCI330  | DATABASE SYSTEMS               | 4       |
+| CSCI345  | OBJECT ORIENTED DESIGN         | 4       |
+*******************************************************
+
+Error: input line not recognized: DELETE COURSE WHERE CNUM = CSCI141 or CNUM = CSCI345;
+PRINT:
+*******************************************************
+| COURSE                                              |
+-------------------------------------------------------
+| CNUM     | TITLE                          | CREDITS |
+-------------------------------------------------------
+| CSCI141  | COMPUTER PROGRAMMING I         | 4       |
+| CSCI145  | COMP PROG & LINEAR DATA STRUCT | 4       |
+| CSCI241  | DATA STRUCTURES                | 4       |
+| CSCI301  | FORMAL LANGUAGES               | 5       |
+| CSCI305  | ALGORITHMS                     | 4       |
+| CSCI330  | DATABASE SYSTEMS               | 4       |
+| CSCI345  | OBJECT ORIENTED DESIGN         | 4       |
+*******************************************************
+
+Error: input line not recognized: DELETE COURSE WHERE CNUM = CSCI145 and CREDITS = 4;
+PRINT:
+*******************************************************
+| COURSE                                              |
+-------------------------------------------------------
+| CNUM     | TITLE                          | CREDITS |
+-------------------------------------------------------
+| CSCI141  | COMPUTER PROGRAMMING I         | 4       |
+| CSCI145  | COMP PROG & LINEAR DATA STRUCT | 4       |
+| CSCI241  | DATA STRUCTURES                | 4       |
+| CSCI301  | FORMAL LANGUAGES               | 5       |
+| CSCI305  | ALGORITHMS                     | 4       |
+| CSCI330  | DATABASE SYSTEMS               | 4       |
+| CSCI345  | OBJECT ORIENTED DESIGN         | 4       |
+*******************************************************
+
+Error: input line not recognized: DELETE PREREQ WHERE CNUM = CSCI241 or CNUM = CSCI145 and PNUM != CSCI141;
+PRINT:
+***********************
+| PREREQ              |
+-----------------------
+| CNUM     | PNUM     |
+-----------------------
+| CSCI141  | MATH112  |
+| CSCI145  | MATH115  |
+| CSCI145  | CSCI141  |
+| CSCI241  | MATH124  |
+| CSCI241  | CSCI145  |
+| CSCI301  | CSCI145  |
+| CSCI305  | CSCI301  |
+| CSCI305  | CSCI241  |
+| CSCI330  | CSCI241  |
+| CSCI345  | CSCI241  |
+***********************
+
+Error: input line not recognized: DELETE OFFERING WHERE CNUM = CSCI241 and SECTION > 27922;
+PRINT:
+****************************************************************************************
+| OFFERING                                                                             |
+----------------------------------------------------------------------------------------
+| CNUM     | SECTION | STARTHOUR | ENDHOUR | DAYS  | ROOM       | INSTRUCTOR           |
+----------------------------------------------------------------------------------------
+| CSCI141  | 27921   | 13:00     | 13:50   | MWF   | CF115      | JAGODZINSKI          |
+| CSCI241  | 27922   | 9:00      | 9:50    | MWF   | AW205      | ISLAM                |
+| CSCI241  | 27935   | 11:00     | 11:50   | MWF   | AW403      | BOVER                |
+| CSCI305  | 27950   | 14:00     | 14:50   | MTWF  | AW403      | LIU                  |
+| CSCI330  | 27974   | 12:00     | 12:50   | MTWF  | CF314      | DENEKE               |
+| CSCI330  | 27977   | 14:00     | 14:50   | MTWF  | CF316      | DENEKE               |
+****************************************************************************************
+
+Error: input line not recognized: DELETE OFFFFFFF WHERE CNUM = CSCI241 and SECTION > 27922;
+Error: input line not recognized: DELETE OFFERING WHERE CCCC = CSCI241 and SECTION > 27922;
+PS C:\Users\norrn\Documents\schoolwork\SURLY1\surly-csci330-surly-group9>
+test7SelectWhere.txt output -------------------------------------------------------------------------------------------------------------------------
+PS C:\Users\norrn\Documents\schoolwork\SURLY1\surly-csci330-surly-group9> java Main.java test7SelectWhere.txt
+RELATION:
+INSERT:
+INSERT:
+INSERT:
+INSERT:
+INSERT:
+INSERT:
+INSERT:
+PRINT:
+*******************************************************
+| COURSE                                              |
+-------------------------------------------------------
+| CNUM     | TITLE                          | CREDITS |
+-------------------------------------------------------
+| CSCI141  | COMPUTER PROGRAMMING I         | 4       |
+| CSCI145  | COMP PROG & LINEAR DATA STRUCT | 4       |
+| CSCI241  | DATA STRUCTURES                | 4       |
+| CSCI301  | FORMAL LANGUAGES               | 5       |
+| CSCI305  | ALGORITHMS                     | 4       |
+| CSCI330  | DATABASE SYSTEMS               | 4       |
+| CSCI345  | OBJECT ORIENTED DESIGN         | 4       |
+*******************************************************
+
+SELECT:
+PRINT:
+*****************************************************************
+| C                                                             |
+-----------------------------------------------------------------
+| COURSE.CNUM | COURSE.TITLE                   | COURSE.CREDITS |
+-----------------------------------------------------------------
+| CSCI141     | COMPUTER PROGRAMMING I         | 4              |
+| CSCI145     | COMP PROG & LINEAR DATA STRUCT | 4              |
+| CSCI241     | DATA STRUCTURES                | 4              |
+| CSCI301     | FORMAL LANGUAGES               | 5              |
+| CSCI305     | ALGORITHMS                     | 4              |
+| CSCI330     | DATABASE SYSTEMS               | 4              |
+| CSCI345     | OBJECT ORIENTED DESIGN         | 4              |
+*****************************************************************
+
+SELECT:
+PRINT:
+*****************************************************************
+| T1                                                            |
+-----------------------------------------------------------------
+| COURSE.CNUM | COURSE.TITLE                   | COURSE.CREDITS |
+-----------------------------------------------------------------
+| CSCI241     | DATA STRUCTURES                | 4              |
+*****************************************************************
+
+SELECT:
+PRINT:
+*****************************************************************
+| T2                                                            |
+-----------------------------------------------------------------
+| COURSE.CNUM | COURSE.TITLE                   | COURSE.CREDITS |
+-----------------------------------------------------------------
+| CSCI241     | DATA STRUCTURES                | 4              |
+*****************************************************************
+
+SELECT:
+PRINT:
+| DB_S                                                          |
+| COURSE.CNUM | COURSE.TITLE                   | COURSE.CREDITS |
+-----------------------------------------------------------------
+| CSCI141     | COMPUTER PROGRAMMING I         | 4              |
+| CSCI145     | COMP PROG & LINEAR DATA STRUCT | 4              |
+| CSCI241     | DATA STRUCTURES                | 4              |
+| CSCI305     | ALGORITHMS                     | 4              |
+| CSCI330     | DATABASE SYSTEMS               | 4              |
+*****************************************************************
+
+SELECT:
+java.lang.Exception: ERROR: Table you are trying to select from (CRRRRR)does not exist.
+SELECT:
+ERROR: TTTTT isn't an attribute of this tuple.
+ERROR: TTTTT isn't an attribute of this tuple.
+ERROR: TTTTT isn't an attribute of this tuple.
+ERROR: TTTTT isn't an attribute of this tuple.
+ERROR: TTTTT isn't an attribute of this tuple.
+ERROR: TTTTT isn't an attribute of this tuple.
+SELECT:
+PRINT:
+*****************************************************************
+| E                                                             |
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+*****************************************************************
+
+SELECT:
+SELECT:
+PRINT:
+*****************************************************************
+| TEST2                                                         |
+| COURSE.CNUM | COURSE.TITLE                   | COURSE.CREDITS |
+-----------------------------------------------------------------
+| CSCI141     | COMPUTER PROGRAMMING I         | 4              |
+| CSCI145     | COMP PROG & LINEAR DATA STRUCT | 4              |
+| CSCI241     | DATA STRUCTURES                | 4              |
+| CSCI301     | FORMAL LANGUAGES               | 5              |
+| CSCI305     | ALGORITHMS                     | 4              |
+| CSCI330     | DATABASE SYSTEMS               | 4              |
+*****************************************************************
+
+PS C:\Users\norrn\Documents\schoolwork\SURLY1\surly-csci330-surly-group9>
+test8Join.txt output --------------------------------------------------------------------------------------------------------------------------------
+PS C:\Users\norrn\Documents\schoolwork\SURLY1\surly-csci330-surly-group9> java Main.java test8Join.txt                                   RELATION:
+RELATION:
+INSERT:
+INSERT:
+INSERT:
+INSERT:
+INSERT:
+INSERT:
+INSERT:
+INSERT:
+INSERT:
+INSERT:
+INSERT:
+INSERT:
+INSERT:
+INSERT:
+INSERT:
+INSERT:
+INSERT:
+PRINT:
+*******************************************************
+| COURSE                                              |
+-------------------------------------------------------
+| CNUM     | TITLE                          | CREDITS |
+-------------------------------------------------------
+| CSCI141  | COMPUTER PROGRAMMING I         | 4       |
+| CSCI145  | COMP PROG & LINEAR DATA STRUCT | 4       |
+| CSCI241  | DATA STRUCTURES                | 4       |
+| CSCI301  | FORMAL LANGUAGES               | 5       |
+| CSCI305  | ALGORITHMS                     | 4       |
+| CSCI330  | DATABASE SYSTEMS               | 4       |
+| CSCI345  | OBJECT ORIENTED DESIGN         | 4       |
+*******************************************************
+
+PRINT:
+***********************
+| PREREQ              |
+-----------------------
+| CNUM     | PNUM     |
+-----------------------
+| CSCI141  | MATH112  |
+| CSCI145  | MATH115  |
+| CSCI145  | CSCI141  |
+| CSCI241  | MATH124  |
+| CSCI241  | CSCI145  |
+| CSCI301  | CSCI145  |
+| CSCI305  | CSCI301  |
+| CSCI305  | CSCI241  |
+| CSCI330  | CSCI241  |
+| CSCI345  | CSCI241  |
+***********************
+
+JOIN:
+PRINT:
+*********************************************************************************************
+| J                                                                                         |
+---------------------------------------------------------------------------------------------
+| COURSE.CNUM | COURSE.TITLE                   | COURSE.CREDITS | PREREQ.CNUM | PREREQ.PNUM |
+---------------------------------------------------------------------------------------------
+| CSCI141     | COMPUTER PROGRAMMING I         | 4              | CSCI145     | CSCI141     |
+| CSCI145     | COMP PROG & LINEAR DATA STRUCT | 4              | CSCI241     | CSCI145     |
+| CSCI145     | COMP PROG & LINEAR DATA STRUCT | 4              | CSCI301     | CSCI145     |
+| CSCI241     | DATA STRUCTURES                | 4              | CSCI305     | CSCI241     |
+| CSCI241     | DATA STRUCTURES                | 4              | CSCI330     | CSCI241     |
+| CSCI241     | DATA STRUCTURES                | 4              | CSCI345     | CSCI241     |
+| CSCI301     | FORMAL LANGUAGES               | 5              | CSCI305     | CSCI301     |
+*********************************************************************************************
+
+JOIN:
+ERROR: Table you are trying to select from (PREEEE) does not exist.
+java.lang.Exception: ERROR: Table you are trying to select from does not exist.
+PRINT:
+ERROR: FAKE could not be printed because that relation does not exist.
+SELECT:
+JOIN:
+PRINT:
+*********************************************************************************************
+| JOINED                                                                                    |
+---------------------------------------------------------------------------------------------
+| COURSE.CNUM | COURSE.TITLE                   | COURSE.CREDITS | PREREQ.CNUM | PREREQ.PNUM |
+---------------------------------------------------------------------------------------------
+| CSCI141     | COMPUTER PROGRAMMING I         | 4              | CSCI145     | CSCI141     |
+| CSCI145     | COMP PROG & LINEAR DATA STRUCT | 4              | CSCI241     | CSCI145     |
+| CSCI145     | COMP PROG & LINEAR DATA STRUCT | 4              | CSCI301     | CSCI145     |
+| CSCI241     | DATA STRUCTURES                | 4              | CSCI305     | CSCI241     |
+| CSCI241     | DATA STRUCTURES                | 4              | CSCI330     | CSCI241     |
+| CSCI241     | DATA STRUCTURES                | 4              | CSCI345     | CSCI241     |
+| CSCI301     | FORMAL LANGUAGES               | 5              | CSCI305     | CSCI301     |
+*********************************************************************************************
+
+PS C:\Users\norrn\Documents\schoolwork\SURLY1\surly-csci330-surly-group9>
+test9TempRelations.txt output -----------------------------------------------------------------------------------------------------------------------
+PS C:\Users\norrn\Documents\schoolwork\SURLY1\surly-csci330-surly-group9> java Main.java test9TempRelations.txt
+*****************************************************************
+| C                                                             |
+-----------------------------------------------------------------
+| COURSE.CNUM | COURSE.TITLE                   | COURSE.CREDITS |
+-----------------------------------------------------------------
+| CSCI141     | COMPUTER PROGRAMMING I         | 4              |
+| CSCI145     | COMP PROG & LINEAR DATA STRUCT | 4              |
+| CSCI241     | DATA STRUCTURES                | 4              |
+| CSCI301     | FORMAL LANGUAGES               | 5              |
+| CSCI305     | ALGORITHMS                     | 4              |
+| CSCI330     | DATABASE SYSTEMS               | 4              |
+| CSCI345     | OBJECT ORIENTED DESIGN         | 4              |
+*****************************************************************
+
+ERROR: Table OFFERING cannot be added because a table with that name already exists.
+****************************************************************************************
+| OFFERING                                                                             |
+----------------------------------------------------------------------------------------
+| CNUM     | SECTION | STARTHOUR | ENDHOUR | DAYS  | ROOM       | INSTRUCTOR           |
+----------------------------------------------------------------------------------------
+| CSCI141  | 27921   | 13:00     | 13:50   | MWF   | CF115      | JAGODZINSKI          |
+| CSCI241  | 27922   | 9:00      | 9:50    | MWF   | AW205      | ISLAM                |
+| CSCI241  | 27935   | 11:00     | 11:50   | MWF   | AW403      | BOVER                |
+| CSCI305  | 27950   | 14:00     | 14:50   | MTWF  | AW403      | LIU                  |
+| CSCI330  | 27974   | 12:00     | 12:50   | MTWF  | CF314      | DENEKE               |
+| CSCI330  | 27977   | 14:00     | 14:50   | MTWF  | CF316      | DENEKE               |
+****************************************************************************************
+
+*******************************************************
+| TESTAROO                                            |
+-------------------------------------------------------
+| CNUM     | TITLE                          | CREDITS |
+-------------------------------------------------------
+*******************************************************
+
+ERROR: Cannot destroy a temporary relation.
+ERROR: Cannot perform DELETE on a Temporary Relation.
+ERROR: You cannot insert into an array that is temporary or the catalog.
+*****************************************************************
+| TESTATWO                                                      |
+-----------------------------------------------------------------
+| COURSE.CNUM | COURSE.TITLE                   | COURSE.CREDITS |
+-----------------------------------------------------------------
+| CSCI141     | COMPUTER PROGRAMMING I         | 4              |
+| CSCI145     | COMP PROG & LINEAR DATA STRUCT | 4              |
+| CSCI241     | DATA STRUCTURES                | 4              |
+| CSCI301     | FORMAL LANGUAGES               | 5              |
+| CSCI305     | ALGORITHMS                     | 4              |
+| CSCI330     | DATABASE SYSTEMS               | 4              |
+| CSCI345     | OBJECT ORIENTED DESIGN         | 4              |
+*****************************************************************
+
+PS C:\Users\norrn\Documents\schoolwork\SURLY1\surly-csci330-surly-group9>

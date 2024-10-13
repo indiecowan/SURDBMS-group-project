@@ -1,0 +1,62 @@
+# test 9 tests for temporary relations
+
+# Relationing tables
+RELATION COURSE (CNUM CHAR 8, TITLE CHAR 30, CREDITS NUM 4);
+
+# Inserting tuples
+INSERT COURSE CSCI141 'COMPUTER PROGRAMMING I' 4;
+INSERT COURSE CSCI145 'COMP PROG & LINEAR DATA STRUCTURES' 4;
+INSERT COURSE CSCI241 'DATA STRUCTURES' 4;
+INSERT COURSE CSCI301 'FORMAL LANGUAGES' 5;
+INSERT COURSE CSCI305 ALGORITHMS 4;
+INSERT COURSE CSCI330 'DATABASE SYSTEMS' 4;
+INSERT COURSE CSCI345 'OBJECT ORIENTED DESIGN' 4;
+
+
+RELATION OFFERING   (CNUM       CHAR    8,
+                    SECTION     NUM     5,
+                    STARTHOUR   CHAR    5,
+                    ENDHOUR     CHAR    5,
+                    DAYS        CHAR    5,
+                    ROOM        CHAR    10,
+                    INSTRUCTOR  CHAR    20);
+
+INSERT OFFERING CSCI141 27921 13:00 13:50 MWF CF115 JAGODZINSKI;
+INSERT OFFERING CSCI241 27922 9:00 9:50 MWF AW205 ISLAM;
+INSERT OFFERING CSCI241 27935 11:00 11:50 MWF AW403 BOVER;
+INSERT OFFERING CSCI305 27950 14:00 14:50 MTWF AW403 LIU;
+INSERT OFFERING CSCI330 27974 12:00 12:50 MTWF CF314 DENEKE;
+INSERT OFFERING CSCI330 27977 14:00 14:50 MTWF CF316 DENEKE;
+
+
+
+
+# Existing TEMP relations get overwritten by new TEMP relations --------------
+C = SELECT COURSE;
+# Printing table
+PRINT C;
+C = SELECT OFFERING;
+
+# New TEMP relations cannot overwrite an existing base relation --------------
+OFFERING = SELECT COURSE;
+# Printing table
+PRINT OFFERING;
+
+# New base relations overwrite existing TEMP relations -----------------------
+TESTAROO = SELECT COURSE;
+RELATION TESTAROO (CNUM CHAR 8, TITLE CHAR 30, CREDITS NUM 4);
+PRINT TESTAROO;
+
+# Have correct schema produced from SELECT, PROJECT, JOIN operations ---------
+# Shown in other test files
+
+# DESTROY cannot destroy a TEMP relation -------------------------------------
+TESTATWO = SELECT COURSE;
+DESTROY TESTATWO;
+
+# DELETE cannot delete from a TEMP relation ----------------------------------
+DELETE TESTATWO;
+
+# INSERT cannot insert into a TEMP relation ----------------------------------
+INSERT TESTATWO CSCI099 'COMPUTER BASICS' 4;
+PRINT TESTATWO;

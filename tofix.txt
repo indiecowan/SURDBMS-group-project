@@ -1,0 +1,3 @@
+- infinite loop on unrecignized command
+- insert error handling
+- get all input until semicolon?

@@ -1,0 +1,25 @@
+# test4: tests both upper and lowercase, tests duplicate relation names, tests bad datatypes
+
+#RELATION
+#DEFINITIONS
+RELATION OFFERING   (CNUM       CHAR    8,
+                    SECTION     NUM     5,
+                    STARTHOUR   CHAR    5,
+                    ENDHOUR     CHAR    5,
+                    DAYS        CHAR    5,
+                    ROOM        CHAR    10,
+                    INSTRUCTOR  CHAR    20,
+                    CNUM        CHAR    8,
+                    test        chars   9);
+
+#INSERTING TUPLES
+
+INSERT OFFERING csci141 27921 13:00 13:50 MWF CF115 JAGODZINSKI;
+insert OFFERING CSCI241 27922 9:00 9:50 MWF AW205 ISLAM;
+INSERT OFFERING CSCI241 27935 11:00 11:50 MWF AW403 bover;
+INSERT offering CSCI305 27950 14:00 14:50 MTWF AW403 LIU;
+INSERT offering csci330 27974 12:00 12:50 MTWF CF314 DENEKE;
+INSERT OFFERING CSCI330 27977 14:00 14:50 MTWF CF316 Deneke;
+
+#PRINTING TUPLES
+PRINT OFFERING;
